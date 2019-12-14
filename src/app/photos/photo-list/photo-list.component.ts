@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class PhotoListComponent implements OnInit {
 
   photos: Photo[] = [];
+  filter: string = '';
 
   constructor(
     private photoService: PhotoService,
@@ -25,4 +26,7 @@ export class PhotoListComponent implements OnInit {
       .subscribe(photos => this.photos = photos);
   }
 
+  filtro(event) {
+    this.filter = event.target.value;
+  }
 }
